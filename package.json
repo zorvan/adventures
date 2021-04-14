@@ -1,0 +1,64 @@
+{
+  "name": "adventure",
+  "version": "1.0.0",
+  "description": "= playing around clojure(script) libraries",
+  "main": "index.js",
+  "scripts": {
+    "client/main": "npx shadow-cljs watch :main",
+    "client/workspaces": "npx shadow-cljs watch :workspaces",
+    "client/test": "npx shadow-cljs watch :test",
+    "client/cljs": "shadow-cljs cljs-repl :main",
+    "client/clj": "shadow-cljs clj-repl",
+    "client/server": "npx shadow-cljs server",
+    "client/nodejs": "npx shadow-cljs node-repl",
+    "server": "clojure -A:dev -J-Dtrace -J-Dghostwheel.enabled=true",
+    "start": "npx run-p client/server server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zorvan/adventures.git"
+  },
+  "author": {
+    "name": "Amin Razavi",
+    "email": "amin.razavi@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zorvan/adventures/issues"
+  },
+  "homepage": "https://github.com/zorvan/adventures#readme",
+  "dependencies": {
+    "big.js": "5.2.2",
+    "cldr-data": "^36.0.0",
+    "cldrjs": "^0.5.1",
+    "js-joda": "^1.11.0",
+    "@js-joda/core": "1.12.0",
+    "@js-joda/locale_en-us": "3.1.1",
+    "@js-joda/timezone": "2.2.0",
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
+    "semantic-ui-react": "^0.88.2",
+    "create-react-class": "^15.6.3",
+    "highlight.js": "9.15.10",
+    "marked": "^1.0.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-highlight.js": "1.0.7",
+    "shadow-cljs": "2.10.14"
+  },
+  "devDependencies": {
+    "highlight.js": "^9.15.0",
+    "react-grid-layout": "^0.16.6",
+    "react-icons": "^2.2.7",
+    "reakit": "^0.11.2",
+    "intl-messageformat": "^2.2.0",
+    "karma": "^5.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cljs-test": "^0.1.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "shadow-cljs": "^2.10.14",
+    "showdown": "^1.8.7"
+  }
+}

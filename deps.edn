@@ -1,0 +1,142 @@
+{:paths ["src/adventures" "resources"  "test/cljs"]
+
+ :deps {org.clojure/clojure          {:mvn/version "RELEASE" :scope "provided"}
+        org.clojure/clojurescript    {:mvn/version "RELEASE" :scope "provided"}
+        org.clojure/tools.deps.alpha {:mvn/version "RELEASE"}
+        org.clojure/tools.reader     {:mvn/version "RELEASE"}
+        org.clojure/tools.cli        {:mvn/version "RELEASE"}
+        org.clojure/data.csv         {:mvn/version "RELEASE"}
+
+                                        ; dev tools
+        ns-tracker/ns-tracker {:mvn/version "0.4.0"}
+        binaryage/devtools    {:mvn/version "RELEASE"}
+                                        ;
+        com.taoensso/encore   {:mvn/version "RELEASE"}
+                                        ;
+        com.taoensso/timbre   {:mvn/version "RELEASE"}
+
+                                        ; JDBC
+        seancorfield/next.jdbc {:mvn/version "RELEASE"}
+        com.zaxxer/HikariCP    {:mvn/version "RELEASE"}
+
+                                        ; Crux
+        juxt/crux-core    {:mvn/version "RELEASE"}
+        juxt/crux-sql     {:mvn/version "RELEASE"}
+        juxt/crux-rdf     {:mvn/version "RELEASE"}
+        juxt/crux-rocksdb {:mvn/version "RELEASE"}
+        juxt/crux-jdbc    {:mvn/version "RELEASE"}
+                                        ;juxt/crux-lmdb              {:mvn/version "RELEASE"}
+                                        ;juxt/crux-kafka             {:mvn/version "RELEASE"}
+                                        ;juxt/crux-kafka-embedded    {:mvn/version "RELEASE"}
+                                        ;juxt/crux-http-server       {:mvn/version "RELEASE"}
+                                        ;juxt/crux-http-client       {:mvn/version "RELEASE"}
+        juxt/crux-metrics {:mvn/version "RELEASE"}
+
+                                        ; HTTP Routing
+        metosin/reitit          {:mvn/version "RELEASE"}
+        metosin/reitit-pedestal {:mvn/version "RELEASE"}
+        metosin/reitit-sieppari {:mvn/version "RELEASE"} ; interseptors like pedestal
+
+                                        ; Web Server
+        ring/ring         {:mvn/version "RELEASE"}
+        yada/yada         {:mvn/version "RELEASE"}
+        http-kit/http-kit {:mvn/version "RELEASE"}
+
+        io.pedestal/pedestal.service     {:mvn/version "RELEASE"}
+        io.pedestal/pedestal.jetty       {:mvn/version "RELEASE"}
+        io.pedestal/pedestal.interceptor {:mvn/version "RELEASE"}
+        io.pedestal/pedestal.route       {:mvn/version "RELEASE"}
+        io.pedestal/pedestal.log         {:mvn/version "RELEASE"}
+
+                                        ; html History
+        clj-commons/pushy {:mvn/version "RELEASE"}
+
+                                        ; Declarative Data Description and Validation
+        prismatic/schema       {:mvn/version "RELEASE"}
+        org.clojure/spec.alpha {:mvn/version "RELEASE"}
+        metosin/malli          {:git/url "https://github.com/metosin/malli.git"
+                                :sha     "2c978df4c860a40280f71650d3399078223fefac"}
+
+                                        ; Authentication
+        buddy/buddy         {:mvn/version "RELEASE"}
+        buddy/buddy-core    {:mvn/version "RELEASE"}
+        buddy/buddy-hashers {:mvn/version "RELEASE"}
+        buddy/buddy-sign    {:mvn/version "RELEASE"}
+
+                                        ; clj Benchmarking
+        criterium/criterium {:mvn/version "RELEASE"}
+
+                                        ; clj/cljs profiling
+        com.taoensso/tufte {:mvn/version "RELEASE"}
+
+                                        ; Human Readable Spec Exception
+        expound/expound {:mvn/version "RELEASE"}
+
+                                        ; Environment Variables
+        environ/environ {:mvn/version "RELEASE"}
+
+                                        ; Async Server
+        aleph/aleph {:mvn/version "RELEASE"}
+
+                                        ; Anync Programming
+        manifold/manifold      {:mvn/version "RELEASE"}
+        org.clojure/core.async {:mvn/version "RELEASE"}
+        funcool/promesa        {:mvn/version "RELEASE"} ; Async with Error Handling
+
+                                        ; Just for pretty printting
+        fipp/fipp    {:mvn/version "RELEASE"}
+        mvxcvi/puget {:mvn/version "RELEASE"} ; Colorful Pretty Print
+
+                                        ; Front-End
+        thheller/shadow-cljs {:mvn/version "RELEASE"}
+
+                                        ; Ract-Redux
+        re-frame/re-frame {:mvn/version "RELEASE"}
+        reagent/reagent   {:mvn/version "1.0.0-alpha2"}
+
+                                        ; UI Framework
+        arttuka/reagent-material-ui {:mvn/version "4.11.0-1"}
+        ;; Fomantic-ui / UIKit / ...
+
+                                        ; CSS
+        garden/garden {:mvn/version "RELEASE"}
+        hiccup/hiccup {:mvn/version "RELEASE"}
+
+                                        ; Fulcro Full-Stack
+        com.fulcrologic/fulcro              {:mvn/version "3.2.11"}
+        com.fulcrologic/fulcro-garden-css   {:mvn/version "3.0.7"}
+        com.fulcrologic/semantic-ui-wrapper {:mvn/version "1.0.1"}
+        com.fulcrologic/guardrails          {:mvn/version "0.0.12"}
+
+
+                                        ; Interoperability
+        clj-python/libpython-clj {:mvn/version "RELEASE"}      ; Python
+        scicloj/clojisr          {:mvn/version "1.0.0-BETA11"} ; R
+
+                                        ; Computation and Statistics
+        uncomplicate/neanderthal       {:mvn/version "0.35.0"}
+        uncomplicate/clojurecuda       {:mvn/version "0.10.0"}
+        uncomplicate/clojurecl         {:mvn/version "0.15.0"}
+        generateme/fastmath            {:mvn/version "RELEASE"}
+        net.mikera/core.matrix         {:mvn/version "0.62.0"}
+        org.clojure/math.combinatorics {:mvn/version "0.1.6"}
+        org.clojure/math.numeric-tower {:mvn/version "0.0.4"}
+
+                                        ; Data Types
+        org.clojure/algo.monads {:mvn/version "0.1.6"}
+
+                                        ; State Management
+        mount/mount {:mvn/version "0.1.12"}
+
+                                        ; Webdriver , Crawler
+        etaoin/etaoin {:mvn/version "RELEASE"}
+
+        }
+
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps  {org.clojure/spec.alpha {:mvn/version "RELEASE"}
+                                org.clojure/test.check {:mvn/version "RELEASE"}}}
+
+           :dev {:extra-deps  {binaryage/devtools         {:mvn/version "RELEASE"}
+                               day8.re-frame/re-frame-10x {:mvn/version "0.6.0"}}
+                 :extra-paths ["src" "env/dev" "target"]}}}

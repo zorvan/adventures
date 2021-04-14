@@ -1,0 +1,42 @@
+{:deps   {:aliases [:dev]}
+ :nrepl  {:port 9000}
+ :builds {:main       {:target     :browser
+                       :output-dir "resources/public/js/"
+                       :asset-path "/js"
+
+                       :modules    {:main {:init-fn adventures.cljs.app/init}}
+                       ;; guardrails checks only during dev
+                       :dev        {;:compiler-options {:external-config {:guardrails {}}}
+                                    }
+                       :compiler-options {:shadow-keywords true}
+                       
+                       :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true
+                                         "day8.re_frame.tracing.trace_enabled_QMARK_"  true}
+                       
+                       :external-config {:devtools/config {:features-to-install    [:formatters :hints]
+                                                           :fn-symbol              "F"
+                                                           :print-config-overrides true}}
+                       
+                       :devtools   {:after-load adventures.cljs.app/re-render
+                                   ; :preloads   [com.fulcrologic.fulcro.inspect.preload app.development-preload]
+                                    :preloads	[com.fulcrologic.fulcro.inspect.preload day8.re-frame-10x.preload devtools.preload]}}
+
+          :test       {:target           :browser-test
+                       :test-dir         "resources/public/js/test"
+                       :ns-regexp        "-test$"
+                       ;; static required for mocking to work
+                       :compiler-options {:static-fns      false
+                                          ;:external-config {:guardrails {:throw? true}}
+                                          }
+                       :devtools         {:http-port          8022
+                                          :http-resource-root "public"
+                                          :http-root          "resources/public/js/test"}}
+
+          :ci-tests   {:target           :karma
+                       :js-options       {:js-provider :shadow}
+                       :compiler-options {:static-fns      false
+                                          ;:external-config {:guardrails {:throw? true}}
+                                          }
+                       :output-to        "target/ci.js"
+                       :ns-regexp        "-test$"}
+          }}
