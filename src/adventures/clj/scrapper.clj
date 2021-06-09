@@ -40,7 +40,7 @@
 
 (defn read-text [driver jobnum]
   (do (wd/click driver (str JobXPath"["jobnum"]"))
-      (wd/wait driver 1)
+      (wd/wait driver 1.5)
       (wd/wait-visible driver [{:id :selected-job-preview}])
       (wd/get-element-text driver ".//*[@id='selected-job-preview']")))
 
@@ -54,7 +54,8 @@
   (let[text     (read-text driver jobnum)
        industry (read-industry driver)]
     (if (empty? text)
-      (parser (read-text driver jobnum) industry)
+      (do (wd/click driver ".//*[@id='mat-tab-label-0-0']")
+          (parser (read-text driver jobnum) industry))
       (if (empty? industry)
         (parser text "NA")
         (parser text industry)))))

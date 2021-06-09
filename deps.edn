@@ -94,6 +94,10 @@
         re-frame/re-frame {:mvn/version "RELEASE"}
         reagent/reagent   {:mvn/version "1.0.0-alpha2"}
 
+										; Native
+		io.vouch/krell {:git/url "https://github.com/vouch-opensource/krell"
+                :sha "0d25830bd0bf02baf272b9c60d3edefc6766ef24"}
+                
                                         ; UI Framework
         arttuka/reagent-material-ui {:mvn/version "4.11.0-1"}
         ;; Fomantic-ui / UIKit / ...
@@ -103,9 +107,9 @@
         hiccup/hiccup {:mvn/version "RELEASE"}
 
                                         ; Fulcro Full-Stack
-        com.fulcrologic/fulcro              {:mvn/version "3.2.11"}
-        com.fulcrologic/fulcro-garden-css   {:mvn/version "3.0.7"}
-        com.fulcrologic/semantic-ui-wrapper {:mvn/version "1.0.1"}
+        com.fulcrologic/fulcro              {:mvn/version "RELEASE"}
+        com.fulcrologic/fulcro-garden-css   {:mvn/version "RELEASE"}
+        com.fulcrologic/semantic-ui-wrapper {:mvn/version "RELEASE"}
         com.fulcrologic/guardrails          {:mvn/version "0.0.12"}
 
 
@@ -131,6 +135,10 @@
                                         ; Webdriver , Crawler
         etaoin/etaoin {:mvn/version "RELEASE"}
 
+                                        ; Art
+        overtone/overtone   {:mvn/version "0.10.6"}
+        genartlib/genartlib {:mvn/version "0.1.22"}
+        quil/quil           {:mvn/version "RELEASE"}
         }
 
  :aliases {:test {:extra-paths ["test"]
