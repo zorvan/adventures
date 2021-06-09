@@ -1,3 +1,5 @@
 *.clj -linguist-detectable
 *.cljs -linguist-detectable
 *.clc -linguist-detectable
+src/adventures/clj/* linguist-vendored
+src/adventures/cljs/* linguist-vendored
