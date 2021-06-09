@@ -1,0 +1,3 @@
+*.clj -linguist-detectable
+*.cljs -linguist-detectable
+*.clc -linguist-detectable
